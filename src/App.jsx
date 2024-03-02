@@ -1,16 +1,10 @@
 import { useState } from "react"
 
-const Display = (props) => {
-  return(
-    <div>{props.counter}</div>
-  )
-}
+const Display = ({counter}) => <div>{counter}</div>
 
-const Button = (props) => {
-  return(
-    <button onClick={props.onClick}>{props.text}</button>
-  )
-}
+const Button = ({onSmash, text}) => <button onClick={onSmash}>{text}</button>
+  
+
 
 const App = () => {
   const [counter, setCounter] = useState(0) //When the state modifying function setCounter is called,
@@ -35,15 +29,15 @@ const App = () => {
     <>
       <Display counter={counter}/>
       <Button 
-        onClick = {increaseByOne} 
+        onSmash = {increaseByOne} 
         text = 'Plus'
       />
       <Button 
-        onClick = {setToZero}
+        onSmash = {setToZero}
         text = 'zero'
       />
       <Button 
-        onClick = {decreaseByOne} 
+        onSmash = {decreaseByOne} 
         text = 'Minus'
       />
     </>
