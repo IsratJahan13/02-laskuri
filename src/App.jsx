@@ -3,12 +3,14 @@ import { useState } from "react"
 const App = () => {
   const [counter, setCounter] = useState(0) //When the state modifying function setCounter is called,
 // React re-renders the component which means that the function body of the component function gets re-executed
+  const increaseByOne = () => setCounter(counter + 1)
+  const setToZero = () => setCounter(0)
 
   return (
     <>
-      {counter}
-      <button onClick={() => setCounter(counter + 1)}>Plus</button>
-      <button onClick={() => setCounter(0)}>Zero</button>
+      <div>{counter}</div>
+      <button onClick={increaseByOne}>Plus</button>
+      <button onClick={setToZero}>Zero</button>
     </>
   )
 }
